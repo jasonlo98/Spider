@@ -2,11 +2,11 @@
 
 The Spider Solitaire developed in JavaScript.
 
-![alt screenshot](https://raw.githubusercontent.com/lrusso/Spider/master/Spider.png)
+![alt screenshot](https://raw.githubusercontent.com/jasonlo98/Spider/master/Spider.png)
 
 ## Web:
 
-https://lrusso.github.io/Spider/Spider.htm
+https://jasonlo98.github.io/Spider/index.htm
 
 ## Differences with the original project:
 
