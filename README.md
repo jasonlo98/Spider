@@ -2,22 +2,15 @@
 
 The Spider Solitaire developed in JavaScript.
 
-![alt screenshot](https://raw.githubusercontent.com/jasonlo98/Spider/master/Spider.png)
-
 ## Web:
 
 https://jasonlo98.github.io/Spider/index.htm
 
 ## Differences with the original project:
 
-- Bug fixes.
-- Fixed bitmaps.
-- Restart button.
-- Fullscreen layout.
-- Unused code removed.
-- Compatible with mobile devices.
-- Available in English and Spanish.
+- Update fps to 60.
 
 ## Based on the work of:
 
+https://github.com/lrusso/Spider
 https://games.gameboss.com/spidersolitairewindowsxp/index.html?lang=en
