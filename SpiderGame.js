@@ -161,7 +161,7 @@ var SimpleGame = (function()
 		text.text = "super";
 
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
-		this.game.time.desiredFps = 20;
+		this.game.time.desiredFps = 60;
 
 		text.visible = false;
 
@@ -3488,4 +3488,5 @@ var ButtonWithOverState = (function()
 		this.y = y;
 		};
 	return ButtonWithOverState;
+
 	}());
