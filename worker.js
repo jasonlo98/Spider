@@ -6,6 +6,8 @@ const filesToCache = [
 	"SpiderFavIcon_192x192.png",
 	"SpiderFavIcon_512x512.png",
 	"SpiderGame.htm",
+	"phaser.min.js",
+	"isWebGLAvailable.min.js",
 	"SpiderGame.js",
 	"SpiderShare.png"
 ];
