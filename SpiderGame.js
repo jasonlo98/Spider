@@ -437,6 +437,7 @@ var GameWonAnim = (function()
 	{
 	function GameWonAnim(parent, x, y)
 		{
+		playAudio(WinCardPath);
 		this.colornum = 0;
 		this.loopEvent1 = SimpleGame.myGame.time.events.loop(10, this.update1, this);
 
@@ -719,6 +720,22 @@ var CardData = (function()
 	return CardData;
 	}());
 
+var audioManager = new Audio()
+var hintPath = 'SpiderHintAudio.mp3';
+var invalidPath = 'SpiderInvalidAudio.mp3';
+var dragCardPath = 'SpiderDragAudio.mp3';
+var dropCardPath = 'SpiderDropAudio.mp3';
+var dealCardPath ='SpiderDealAudio.mp3';
+var WinCardPath ='SpiderWinAudio.mp3';
+
+function playAudio(src)
+	{
+	audioManager.pause()
+	audioManager.src = src
+	audioManager.currentTime = 0;
+	audioManager.play()
+	}
+
 var BoardManager = (function()
 	{
 	function BoardManager()
@@ -831,6 +848,7 @@ var BoardManager = (function()
 				BoardManager.currentObservedColumn = i;
 				if (BoardManager.hintSuccess)
 					{
+					playAudio(hintPath);
 					return;
 					}
 				}
@@ -1088,6 +1106,7 @@ var BoardManager = (function()
 
 			if (BoardManager.hintSuccess)
 				{
+				playAudio(hintPath);
 				cardPlaced.invertFrontColors();
 				SimpleGame.myGame.time.events.add(Consts.timeToHint, function()
 					{
@@ -1095,6 +1114,8 @@ var BoardManager = (function()
 					}, this);
 				return;
 				}
+				playAudio(invalidPath);
+
 
 			if (firstCardOnly)
 				{
@@ -1160,6 +1181,7 @@ var BoardManager = (function()
 		BoardManager.sortImmediately();
 		BoardManager.initialTween();
 		GameUI.reinitData();
+		playAudio(dealCardPath);
 		cardsAreMoving = true;
 		SimpleGame.myGame.time.events.add(1200, function()
 			{
@@ -2084,6 +2106,7 @@ var Card = (function()
 
 	Card.prototype.setFromStockToTabStart = function(myTabIdx)
 		{
+		playAudio(dealCardPath);
 		this.myTabIdx = myTabIdx;
 		this.cardImgBack.visible = false;
 		this.cardImgFront.visible = true;
@@ -2314,6 +2337,7 @@ var CardUtil = (function()
 			{
 			if (arr[i].myState == Card.STATE_DRAGGED || arr[i].selectedFlag)
 				{
+				playAudio(dropCardPath);
 				Card.items.add(arr[i].cardImgFront);
 				}
 			}
@@ -2556,6 +2580,7 @@ var CardUtil = (function()
 
 				if (retArr.length == CardUtil.NUM_CARDS_PER_SUIT)
 					{
+					playAudio(dealCardPath);
 					return retArr;
 					}
 				}
@@ -3071,6 +3096,7 @@ var CardUtil = (function()
 
 	CardUtil.checkIfSelectedCardExists = function()
 		{
+		playAudio(dragCardPath);
 		var i = Card.cardArray.length;
 		while (i-- > 0)
 			{
